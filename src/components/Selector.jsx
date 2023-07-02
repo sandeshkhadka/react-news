@@ -7,7 +7,7 @@ const Selector = () => {
   return (
     <div>
       <form
-        className="flex flex-col text-2xl"
+        className="flex text-2xl gap-3"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.target);
@@ -15,27 +15,39 @@ const Selector = () => {
           setCategory(formData.get("categories"));
         }}
       >
-        <label htmlFor="countries">
-          Country:
-          <select name="countries">
+        <div className="border border-gray-300 p-1">
+          <label htmlFor="countries" className="pt-1 pr-2">
+            Country
+          </label>
+          <select
+            name="countries"
+            className="bg-white border-l border-gray-300 pl-2"
+          >
+            <option value="us">us</option>
             {countries.map((country) => (
               <option key={country} value={country}>
                 {country}
               </option>
             ))}
           </select>
-        </label>
-        <label htmlFor="categories">
-          Category:
-          <select name="categories">
+        </div>
+        <div className="border border-gray-300 p-1">
+          <label htmlFor="categories" className="pt-1 pr-2">
+            Category
+          </label>
+          <select
+            name="categories"
+            className="bg-white border-l border-gray-300 pl-2"
+          >
+            <option value="technology">technology</option>
             {categories.map((category) => (
               <option key={category} value={category}>
                 {category}
               </option>
             ))}
           </select>
-        </label>
-        <button type="submit" className="border border-black px-1 py-1 text-xl">
+        </div>
+        <button type="submit" className="border border-gray-300 p-1 px-3">
           Search
         </button>
       </form>

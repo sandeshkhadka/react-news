@@ -8,7 +8,6 @@ export const categories = [
   "health",
   "science",
   "sports",
-  "technology",
 ];
 export const countries = [
   "ae",
@@ -62,7 +61,6 @@ export const countries = [
   "tr",
   "tw",
   "ua",
-  "us",
   "ve",
   "za",
 ];

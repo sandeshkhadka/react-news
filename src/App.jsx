@@ -1,8 +1,7 @@
 import { useState } from "react";
 import Nav from "./components/Nav";
-import PostList from "./components/PostList";
+import HeadLineList from "./components/HeadLineList";
 import SelectionContext from "./slectionContext";
-import Selector from "./components/Selector";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient({
@@ -26,8 +25,7 @@ function App() {
       <SelectionContext.Provider value={selectionContext}>
         <QueryClientProvider client={queryClient}>
           <Nav />
-          <Selector />
-          <PostList />
+          <HeadLineList />
         </QueryClientProvider>
       </SelectionContext.Provider>
     </div>
