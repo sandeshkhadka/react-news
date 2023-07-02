@@ -2,6 +2,7 @@ import { useContext } from "react";
 import SelectionContext from "../slectionContext";
 import { useQuery } from "@tanstack/react-query";
 import HeadLine from "./HeadLine";
+const API_KEY = import.meta.env.VITE_REACT_APP_NEWS_API_KEY;
 async function fetchPost({ queryKey }) {
   const url = queryKey[1];
   const apiRes = await fetch(url);
@@ -16,7 +17,7 @@ const HeadLineList = () => {
   const selectionContext = useContext(SelectionContext);
   const [country] = selectionContext.country;
   const [category] = selectionContext.category;
-  const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=ade14025d7fc48b98eb7334411ca959b`;
+  const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`;
   // const url = "";
   const query = useQuery(["postList", url], fetchPost);
   // This is here for testing when internet is not available
